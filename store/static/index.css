@@ -1,0 +1,303 @@
+
+nav {
+background-color: green;
+padding: 20px;
+display: flex;
+justify-content: space-between;
+color: black;
+flex-shrink: 0;
+gap: 20px;
+font-size: 20px;
+}
+.nav-links{
+    margin-right: 80px;
+}
+.name {
+margin-left: 120px;
+justify-content: space-around ;
+}   
+a{
+    padding: 8px 12px
+}     
+.wrapper{
+    width: 90%;
+    height:230px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    padding: 10px;
+    flex-shrink: 0;
+    gap: 20px;
+    overflow-x: hidden;
+    overflow-x: scroll; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    background-color: rgb(211, 25, 192);
+    border-radius: 20px;
+}
+.container{
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background-color: white;
+    height:230px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+    transition: all 0.3s ease;
+}
+.container:hover {
+    transform: translateX(10px);
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+img{
+    position: relative;
+    width: 150px;
+    height: 120px;
+    border-radius: 5px;
+    margin-top: 0%;
+    margin-left: 20px;
+}
+.description{
+    color: brown;
+}
+.product{
+    color:blueviolet
+}
+.login{
+    width: 180px;
+    height: 200px;
+    color: red;
+    background-color: rgb(20, 147, 111);
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.cart-item{
+    background-color: yellow;   
+    width: 40%;
+    justify-content: center;
+    height: 600px;
+    overflow-y: hidden;
+    overflow-y: scroll;
+    margin-left: 20%;
+
+}
+.image{
+    width: 50px;
+    height: 105px;
+}
+.signup{
+    margin-top: 150px;
+    width: 300px;
+    height: 370px;
+    margin-left: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background-color: white;
+}
+input{
+    margin-left: 20%;
+    color: red;
+    border-radius: 5px;
+}
+.log_card{
+    margin-top: 150px;
+    width: 340px;
+    height: 370px;
+    margin-left: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background-color: white;
+
+}
+.j{
+    color: brown;
+    height: 32px;
+    overflow-x: hidden;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+.price{
+    color: rgb(162, 255, 0);
+}
+.cart-container{
+    display: block;
+    overflow-y: hidden;
+    overflow-y: scroll;
+    height: 500px;
+    background-color: #c14853;
+    margin-left: 200px;
+    border-radius: 20px;
+    width: 50%;
+    scrollbar-width: none;
+}
+.action{
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    background-color: blue;
+}
+.item{
+    display: flex;
+
+}
+.pq{
+    display: block;
+    margin: 32px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+h1{
+    margin-left: 10%;
+    color: blue;
+}
+h2{
+    text-align: center;
+    width: 100%;height: 60px;
+    background-color: #48c17a;
+    font-size:50px;
+    text-shadow: #4858c1 10px;
+    border-radius: 20px;
+    color: red;
+}
+.total{
+    margin-left: 15%;
+    margin-bottom: 0%;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    background-color:black;
+    border-radius: 20px;
+    top: 0px;
+}
+.m_pesa {
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-left: 400px;
+}
+.m_pesa h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.m_pesa label {
+    display: block;
+    margin-bottom: 5px;
+}
+.input-group {
+    display: block;
+    margin-left: 20px;
+}
+.m_pesa input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.m_pesa button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.m_pesa button:hover {
+    background-color: #0056b3;
+}
+.m_pesa{
+    margin-top: 100px;
+}
+.search-container {
+  width: 400px;
+  height: 32px;
+  margin-bottom: 5px;
+  margin-left: 4px;
+  background-color: #c14853;
+}
+
+#searchInput {
+    width: 250px;
+    padding: 20px;
+    border-radius: 40px;
+    font-size: 16px;
+    outline: none;
+    background-color: aqua;
+    color: red;
+    border-color: #0077ff;
+}
+footer{
+    padding: 20px;
+    background-color: green;
+    color: white ;
+    font-size: 16px;
+    text-align: center;
+    position: absolute;          
+    width: 100%;  
+}
+.place-card{
+    height:400px;
+    width: 600px;
+    border: transparent;
+    margin-left: 20%;
+    align-items:center ;
+}
+h3{
+    color: blue;
+    font-size: 1.2rem;
+    border-radius: 40px;
+    text-align: center;
+    background-color: rgb(255, 0, 0);
+
+}
+.slid{
+    margin-left: 300px;
+}
+.scrolling-text {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  animation: scroll-left 10s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.checkout{
+    margin-left: 50%;
+}
+.page{
+    width: 100%;
+    background-color: rgb(0, 64, 255);
+    border-radius: 20px;
+}
+.page1{
+    height: 100%;
+    width: 600px;
+    background-color: yellowgreen;
+    border-radius: 20px;
+}
+.dh{
+    width: 100%;
+    height:100%;
+    background-color: aquamarine;
+    color: blue;
+}
+.d{
+    color: red;
+}
+

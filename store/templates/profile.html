@@ -1,0 +1,18 @@
+{%load static%}
+<head>
+<script src="{% static 'myapp/scripts.js' %}"></script>
+</head>
+<button onclick="showProfile()"><i class="fa fa-user" aria-hidden="true"></i> Profile</button>
+    {% if user.is_authenticated %}
+<div id="profiles" class="profile">
+    <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Username: {{ user.username }}</p>
+
+    <form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <div class="btn1" > <button type="submit">Logout</button> </div>
+    </form>
+</div>
+{% endif %}       
+</div>

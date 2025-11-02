@@ -1,0 +1,136 @@
+{% load static %}
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'index.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+      <div class="scrolling-text">
+  Welcome to mkoloniz Limited Shop
+</div>
+
+        <nav>
+            <div class="name">
+        <a href="{% url 'home' %}"><i class="fas fa-home"></i>Home</a>
+        <a href="{% url 'about' %}"><i class="fas fa-info-circle"></i>about</a>
+            </div>
+        <div class="search-container">
+          <form method="GET" action="{% url 'home' %}">
+          <input type="text" name="q" placeholder="Search items...">
+          <button type="submit"><i class="fas fa-search"></i></button>
+  </form>
+</div>
+      <div class="nav-links">
+         <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i>login</a>
+         <a href="{% url 'signup' %}"><i class="fas fa-user-plus"></i>signup</a>
+         <a href="{% url 'cart' %}"><i class="fas fa-shopping-cart"></i> Cart ({{ request.session.cart|length }})</a>
+      </div>
+    </nav>
+</div>
+  </nav>
+    <div class="main">
+      {% if phones|length == 0 and clothes|length == 0 and watches|length == 0 and screens|length == 0 %}
+  <p>No products found matching your search.</p>
+{% endif %}
+      <h3>phones</h3>
+<div class="wrapper">
+  {%for product in  phones %}
+    <div class="container">
+        <a href="{% url 'product' product.id %}">
+        
+             <img src="{{product.image.url}}" alt="{{ product.name }}">
+             </a>
+          <div class="j">
+              <p> {{ product.name }}</p>
+              </div>
+              <div class="price">
+            <p>Price:{{ product.price }}</p>
+              </div>
+            <form method="POST" action="{% url 'addtocart' product.id %}">
+              <div class="btn">
+              {% csrf_token %}
+              <button type="submit">Add to cart</button>
+              </div>
+            </form>
+     </div>
+    {% endfor %} 
+</div>
+ <h3> Clothes </h3>
+<div class="wrapper">
+ 
+  {%for product in  clothes %}
+    <div class="container">
+        <a href="{% url 'product' product.id %}">
+        
+             <img src="{{product.image.url}}" alt="{{ product.name }}">
+             </a>
+          <div class="j">
+              <p> {{ product.name }}</p>
+              </div>
+              <div class="price">
+            <p>Price:{{ product.price }}</p>
+            </div>
+            <div class="btn">
+            <form method="POST" action="{% url 'addtocart' product.id %}">
+              {% csrf_token %}
+              <button type="submit">Add to cart</button>
+              </div>
+            </form>
+     </div>
+    {% endfor %} 
+</div>
+<h3> Watches </h3>
+<div class="wrapper">
+  {%for product in  watches %}
+    <div class="container">
+        <a href="{% url 'product' product.id %}">
+        
+             <img src="{{product.image.url}}" alt="{{ product.name }}">
+             </a>
+          <div class="j">
+              <p> {{ product.name }}</p>
+              </div>
+              <div class="price">
+            <p>Price:{{ product.price }}</p>
+            </div>
+            <div class="btn">
+            <form method="POST" action="{% url 'addtocart' product.id %}">
+              {% csrf_token %}
+              <button type="submit">Add to cart</button>
+              </div>
+            </form>
+    </div>
+    {% endfor %} 
+</div>
+<h3> Screens </h3>
+<div class="wrapper">
+  {%for product in  screens %}
+    <div class="container">
+        <a href="{% url 'product' product.id %}">
+        
+            <img src="{{product.image.url}}" alt="{{ product.name }}">
+            </a>
+          <div class="j">
+              <p> {{ product.name }}</p>
+              </div>
+              <div class="price">
+            <p>Price:{{ product.price }}</p>
+            </div>
+            <div class="btn">
+            <form method="POST" action="{% url 'addtocart' product.id %}">
+              {% csrf_token %}
+              <button type="submit">Add to cart</button>
+              </div>
+            </form>
+     </div>
+    {% endfor %} 
+  </div>
+</div>
+</div>
+</body>
+<footer> 
+  <p>© 2025 Mkoloniz online shop .rights reserved.</p>
+</footer> 
+</html>

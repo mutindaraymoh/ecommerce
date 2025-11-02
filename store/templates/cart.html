@@ -1,0 +1,51 @@
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <title>My Cart</title>
+  <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+  <h1>My Cart</h1>
+  <div class="cart-container">
+    {% for key, item in cart.items %}
+    <div class="item">
+          <img src="{{ item.image }}" alt="{{ item.name }}" width="100">
+          <div class="pq">
+          <p><strong>{{ item.name }}</strong></p>
+          <p>Price: Ksh{{ item.price }}</p>
+          <p>Quantity: {{ item.quantity }}</p>
+          </div>
+        <div class="actions">
+          <form method="POST" action="{% url 'addtocart' key %}">
+            {% csrf_token %}
+            <button type="submit">Add to cart</button>
+          </form>
+
+          <form method="POST" action="{% url 'removefromcart' key %}">
+            {% csrf_token %}
+            <button type="submit">Remove from cart</button>
+          </form>
+        </div>
+      </div>
+    {% endfor %}
+
+    <div class="total">
+      <h3>Total: Ksh{{ total }}</h3>
+    </div>
+  </div>
+<div class="checkout">
+      <form method="GET" action="{% url 'payment' %}">
+        <button type="submit" style="
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+">
+  Proceed to Pay
+  </button>
+</div>
+</body>
+

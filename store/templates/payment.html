@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'index.css' %}">
+        <script src="{% static 'myapp/scripts.js' %}"></script>
+    </head>
+<body>
+<div class="page">
+    <div class="m_pesa">
+    <h2>M-Pesa Payment</h2>
+    {%if message %}
+    {{message}}
+    {%endif%}
+    {%if error %}
+    {{error}}
+    {%endif%}
+    <form method="POST" action="{% url 'stkpush' %}">
+    {% csrf_token %}
+    <input type="text" name="number" required placeholder="Enter phone number">
+    <button type="submit">Lipa na Mpesa</button>
+</form>
+</div>
+</div>
+
+</body>
+</html>

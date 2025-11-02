@@ -1,0 +1,14 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<div class="dh">
+<h2>{{ category.name }}</h2>
+<div class="img">
+<img src="{{ category.image.url }}">
+</div>
+<div class="d">
+  <p>{{ category.price }}</p>
+</div>
+<p>{{ category.description }}</p>
+</div>
